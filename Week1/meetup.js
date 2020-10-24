@@ -34,7 +34,7 @@ connection.query("use meetup", function(err, results, fields) {
 let create_table_queries = [
     "create table Invitee (invitee_no int, invitee_name varchar(50), invited_by varchar(50))",
     "create table Room (room_no int, room_name varchar(50), floor_number int)",
-    "create table Meeting (meeting_no int, meeting_title varchar(50), starting_time time, ending_time time, room_no int)"
+    "create table Meeting (meeting_no int, meeting_title varchar(50), starting_time datetime, ending_time time, room_no int)"
 ]
 
 create_table_queries.forEach(query => {
@@ -81,11 +81,11 @@ insert_room_queries.forEach(query => {
 })
 
 let insert_meeting_queries = [
-    "insert into Meeting values (1, 'Database Workshop', '10:00', '11:00', 1)",
-    "insert into Meeting values (2, 'Hackyourfuture Graduation', '11:00', '12:00', 2)",
-    "insert into Meeting values (3, 'Career Talk', '12:00', '13:00', 3)",
-    "insert into Meeting values (4, 'New Work Flow', '09:00', '10:00', 4)",
-    "insert into Meeting values (5, 'Node.js Workshop', '10:30', '12.00', 5)"
+    "insert into Meeting values (1, 'Database Workshop', '2020-12-20 10:00:00', '2020-12-20 11:00:00', 1)",
+    "insert into Meeting values (2, 'Hackyourfuture Graduation', '2020-12-20 11:00:00', '2020-12-20 12:00:00', 2)",
+    "insert into Meeting values (3, 'Career Talk', '2020-12-20 12:00:00', '2020-12-20 13:00:00', 3)",
+    "insert into Meeting values (4, 'New Work Flow', '2020-12-20 13:00:00', '2020-12-20 14:00:00', 4)",
+    "insert into Meeting values (5, 'Node.js Workshop', '2020-12-20 14:00:00', '2020-12-20 15:00:00', 5)"
 ]
 
 insert_meeting_queries.forEach(query => {
