@@ -45,11 +45,20 @@ SELECT
 	min(h_index),
 	max(h_index)
 	FROM Authors
-	GROUP BY university`;
+    GROUP BY university`;
+    
+const sumOfPapersForAuthorsPerUniversity = `
+SELECT
+	university,count(p.paper_id) as paper_count
+	FROM Research_Papers AS p
+	INNER JOIN Author_Research r ON r.paper_id = p.paper_id
+	INNER JOIN Authors AS a ON a.author_no = r.author_no
+	GROUP BY (university)`;
 
 execQuery(researchPapersWithNumberOfAuthors);
 execQuery(countOfPublishedPapersFemaleAuthors);
 execQuery(averageHIndex);
 execQuery(groupByUniversity);
+execQuery(sumOfPapersForAuthorsPerUniversity);
 
 connection.end();
