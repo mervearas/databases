@@ -20,10 +20,10 @@ function seedDatabase() {
             `;
     const insertIntoAccountChangesTable = `
         INSERT INTO account_changes values
-            (1,101,10000,'2020-11-01','deposit'),
-            (2,102,4950,'2020-10-01','deposit'),
-            (3,103,250,'2020-01-01','deposit'),
-            (4,104, 999,'2020-09-01','deposit')
+            (1,101,10000,'2020-11-01 10:12:12','deposit'),
+            (2,102,4950,'2020-10-01 08:12:22','deposit'),
+            (3,103,250,'2020-01-01 09:01:12','deposit'),
+            (4,104, 999,'2020-09-01 12:04:00','deposit')
             `;
 
     connection.connect();

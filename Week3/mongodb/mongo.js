@@ -33,11 +33,10 @@ async function main () {
 
         // delete the city
         await city.deleteOne({"Name":"Bursa"});
-
-        // close the connection
-        await client.close();
     } catch (error) {
         console.log(error);
+    }
+    finally {
         // close the connection
         await client.close();
     }

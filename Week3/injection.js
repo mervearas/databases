@@ -1,8 +1,9 @@
-// Example name and code
-// name="Turkey"
-// code="TUR"
+// This will give all the records in the database
+// name="Turkey" 
+// code="TUR" or 1=1
 
-// rewrite function/injection
+// rewrite function/injection to prevent it
+
 function getPopulation(Country,name,code,cb) {
     conn.query(
         `SELECT Population FROM ? WHERE Name = ? and code = ?`, [Country, name, code],

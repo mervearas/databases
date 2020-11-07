@@ -21,7 +21,7 @@ function seedDatabase() {
             change_number int primary key,
             account_number int,
             amount float,
-            changed_date date,
+            changed_date datetime,
             remark varchar(200),
             FOREIGN KEY(account_number) REFERENCES account(account_number)
             )`;
